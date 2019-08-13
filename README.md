@@ -1,6 +1,12 @@
 # TMDB
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
+The Movie Database (TMDb) is a community built movie and TV database. Every piece of data has been added by  amazing community dating back to 2008. TMDb's strong international focus and breadth of data is largely unmatched and something we're incredibly proud of. Put simply, we live and breathe community and that's precisely what makes us different. [readmore](https://www.themoviedb.org/about)
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0. This project will show popular movie list by default with help of [TMDB Api](https://developers.themoviedb.org/3/getting-started/introduction)
+
+To Test this applciation you need to get API key from the [TMDB](https://www.themoviedb.org) and place in enviornment file.
+
+Demo click [here](http://themoviedb-ravi.s3-website-us-east-1.amazonaws.com)
 
 ## Development server
 
