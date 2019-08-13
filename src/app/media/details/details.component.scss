@@ -1,0 +1,39 @@
+.card {
+  img {
+    width: 100%;
+  }
+  .card-header {
+    position: relative;
+    display: block;
+    h4 {
+      font-size: 1.25rem;
+    }
+    .card-icon {
+      margin-top: -15%;
+      width: 15%;
+      float: left;
+      margin-right: 2rem;
+    }
+  }
+  .card-category {
+    font-size: 0.8rem;
+  }
+  .releasedate,
+  .card-category {
+    color: #6c92a2;
+  }
+}
+.backbutton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  i {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .card-icon {
+    width: 25% !important;
+    margin-right: 1rem !important;
+  }
+}

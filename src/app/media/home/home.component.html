@@ -1,0 +1,76 @@
+<div class="container d-flex flex-column moviedb">
+  <header>
+    <nav
+      class="navbar navbar-expand-lg justify-content-center navbar-light bg-transparent"
+    >
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://www.themoviedb.org/assets/2/v4/logos/primary-green-d70eebe18a5eb5b166d5c1ef0796715b8d1a2cbc698f96d311d62f894ae87085.svg"
+          width="100"
+          alt="the Movie database"
+        />
+      </a>
+    </nav>
+  </header>
+  <main class="flex-grow-1">
+    <div class="row">
+      <div class="col-12">
+        <form class="form-inline ">
+          <div class="section">
+            <input
+              class="form-control "
+              type="text"
+              placeholder="search"
+              id="searchtext"
+              [(ngModel)]="searchText"
+              [ngbTypeahead]="search"
+              [inputFormatter]="formatter"
+              [resultTemplate]="rt"
+              (selectItem)="selectMovieItem($event)"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <label class="search-input">
+              <i class="fa fa-search"></i>
+            </label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div *ngIf="popularMovies$ | async as popularMovies">
+      <h4 class="mt-5">Popular Movies</h4>
+      <div class="row">
+        <div
+          class="col-lg-3 col-md-4 col-sm-6 col-6 mb-3"
+          *ngFor="let movie of popularMovies.results"
+        >
+          <div
+            class="card bg-transparent border-0"
+            (click)="onSelected(movie.id)"
+          >
+            <img [src]="imagePath + movie.poster_path" [alt]="movie.title" />
+            <span
+              class="badge"
+              [ngClass]="{
+                badge_top: movie.vote_average > '6.9',
+                badge_avg: movie.vote_average < '7',
+                badge_low: movie.vote_average < '4'
+              }"
+              >{{ movie.vote_average * 10 }}%</span
+            >
+            <div class="card-body">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <span class="releasedate">{{
+                movie.release_date | date: "MMMM,yyyy"
+              }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+</div>
+<ng-template #rt let-r="result" let-t="term">
+  <i class="fa fa-film" aria-hidden="true"></i> &nbsp;{{ r.name }} &nbsp; (
+  {{ r.release_date ? (r.release_date | date: "yyyy") : "" }})
+</ng-template>

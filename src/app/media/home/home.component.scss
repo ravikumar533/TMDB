@@ -1,0 +1,109 @@
+form {
+  background: #fff;
+  border-radius: 30px;
+  border: 1px solid #6c92a2;
+  .input-group {
+    width: 100% !important;
+    border: 1px solid #6c92a2;
+    border-radius: 30px;
+    .input-group-append {
+      margin-left: -1px;
+      background: #fff;
+      border: none;
+      border-radius: 0 30px 30px 0;
+    }
+  }
+  .section {
+    width: 100% !important;
+    label {
+      position: absolute;
+      right: 41px;
+      top: 17px;
+      z-index: 111;
+      color: #21d07a;
+    }
+  }
+  .input-group-text {
+    border: none;
+    width: 60px;
+    color: #21d07a !important;
+  }
+  .dropdown-menu {
+    width: 100%;
+    .dropdown-item {
+      border-bottom: 1px gray dotted;
+      &.active,
+      &:hover {
+        background-color: #21d07a !important;
+      }
+    }
+  }
+  .form-control {
+    color: #21d07a !important;
+    padding: 1.5rem !important;
+    border: none !important;
+    border-radius: 30px;
+    width: 100% !important;
+    &::placeholder {
+      color: #21d07a !important;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: #21d07a !important;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #21d07a !important;
+    }
+  }
+  .form-control:focus,
+  input:focus {
+    border: none !important;
+    background: #fff !important;
+  }
+}
+.card {
+  &:hover {
+    cursor: pointer !important;
+  }
+  img {
+    width: 100% !important;
+  }
+  h5 {
+    font-size: 1rem !important;
+    margin-bottom: 0 !important;
+  }
+  span.releasedate {
+    color: #6c92a2;
+    font-size: 0.8rem !important;
+  }
+  .badge {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    padding: 4px 8px;
+  }
+  .badge_top {
+    background: #21d07a;
+  }
+  .badge_avg {
+    background: #4902a3;
+  }
+  .badge_low {
+    background: #d1225b;
+  }
+}
+header {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("~/assets/background-image.svg");
+  background-position: 3% 56%;
+  background-size: 121%;
+  background-repeat: no-repeat;
+}

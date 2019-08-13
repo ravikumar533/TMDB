@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-12" *ngIf="movie$ | async as movie">
+    <div class="card bg-transparent border-0">
+      <img
+        [src]="backgroundImagePath + movie.backdrop_path"
+        *ngIf="movie.backdrop_path"
+        [alt]="movie.title"
+      />
+      <img
+        [src]="backgroundImagePath + movie.poster_path"
+        *ngIf="!movie.backdrop_path"
+        [alt]="movie.title"
+      />
+      <div class="card-header card-header-icon ">
+        <div class="card-icon">
+          <img [src]="imagePath + movie.poster_path" [alt]="movie.title" />
+        </div>
+        <h4 class="card-title">{{ movie.title }}</h4>
+        <p class="card-category ">
+          {{ movie.release_date | date: "yyyy" }}&nbsp;.&nbsp;{{
+            movie.vote_average * 10
+          }}% User Score
+        </p>
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">Overview</h5>
+        <span class="releasedate"> {{ movie.overview }}</span>
+      </div>
+    </div>
+    <span class="backbutton" (click)="back()">
+      <i class="fa fa-arrow-left">&nbsp;</i>
+    </span>
+  </div>
+</div>
